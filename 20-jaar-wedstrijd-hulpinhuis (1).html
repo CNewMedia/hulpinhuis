@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20 jaar Hulp in huis wedstrijd | Hulp in huis</title>
+<meta name="description" content="Hulp in huis bestaat 20 jaar. Ben je klant of werknemer? Schrijf je in en neem deel aan onze maandelijkse wedstrijd van juli tot en met december 2026.">
+<meta property="og:title" content="20 jaar Hulp in huis. Dat vieren we samen met jou.">
+<meta property="og:description" content="Schrijf je éénmalig in en neem deel aan onze maandelijkse wedstrijd van juli tot en met december 2026.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#21295C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M8 4h6v4h-4v16h4v4H8z' fill='%2345C7D6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Design tokens ===== */
+:root{
+  --turquoise:#45C7D6;
+  --turquoise-dark:#2BAFBF;
+  --turquoise-soft:#D6F2F6;
+  --navy:#21295C;
+  --navy-soft:#5A618A;
+  --sky:#EAF8FB;
+  --sky-border:#CDEDF3;
+  --white:#FFFFFF;
+  --danger:#C9344A;
+  --radius-pill:999px;
+  --radius-card:20px;
+  --radius-input:14px;
+  --shadow-card:0 14px 40px rgba(33,41,92,.10);
+  --shadow-soft:0 4px 14px rgba(33,41,92,.07);
+  --space-section:clamp(3.5rem,8vw,6rem);
+  --container:1080px;
+}
+
+/* ===== Reset & base ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--navy);background:var(--white);line-height:1.65;font-size:1rem;}
+img,svg{display:block;}
+a{color:inherit;}
+button{font-family:inherit;}
+:focus-visible{outline:3px solid var(--turquoise);outline-offset:3px;border-radius:4px;}
+
+.container{max-width:var(--container);margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem);}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--navy);color:var(--white);padding:.75rem 1.25rem;z-index:200;border-radius:0 0 12px 0;}
+.skip-link:focus{left:0;}
+
+h1,h2,h3{line-height:1.2;font-weight:700;text-wrap:balance;}
+h2{font-size:clamp(1.5rem,3.2vw,2.1rem);}
+.section{padding-block:var(--space-section);}
+.section-intro{color:var(--navy-soft);max-width:38rem;}
+.center{text-align:center;}
+.center .section-intro{margin-inline:auto;}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:var(--radius-pill);padding:.85rem 1.9rem;font-size:.95rem;font-weight:600;text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;white-space:nowrap;}
+.btn:active{transform:scale(.97);}
+.btn svg{width:1.05em;height:1.05em;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+.btn-primary{background:var(--turquoise);color:var(--white);box-shadow:0 6px 18px rgba(69,199,214,.35);}
+.btn-primary:hover{background:var(--turquoise-dark);box-shadow:0 8px 22px rgba(69,199,214,.45);}
+.btn-navy{background:var(--navy);color:var(--white);}
+.btn-navy:hover{background:#2C3573;}
+.btn-outline{background:transparent;border:2px solid var(--turquoise);color:var(--navy);}
+.btn-outline:hover{background:var(--turquoise-soft);}
+.btn-lg{padding:1rem 2.4rem;font-size:1.05rem;}
+
+/* ===== Topbar ===== */
+.topbar{background:var(--navy);color:var(--white);text-align:center;padding:.55rem 1rem;font-size:.82rem;font-weight:500;}
+.topbar a{color:var(--turquoise);font-weight:600;text-decoration-thickness:1.5px;text-underline-offset:3px;}
+
+/* ===== Header ===== */
+.site-header{position:sticky;top:0;z-index:100;background:var(--white);transition:box-shadow .25s;}
+.site-header.scrolled{box-shadow:var(--shadow-soft);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem;}
+.logo{display:inline-flex;align-items:baseline;gap:.3rem;font-weight:700;font-size:1.3rem;text-decoration:none;letter-spacing:-.01em;}
+.logo .bracket{color:var(--turquoise);font-size:1.55rem;line-height:1;transform:translateY(2px);}
+.logo-img{width:auto;height:48px;object-fit:contain;font-weight:700;font-size:1.2rem;color:var(--navy);line-height:48px;}
+.logo-img-sm{height:38px;line-height:38px;font-size:1rem;}
+.nav-desktop{display:flex;align-items:center;gap:1.6rem;font-size:.9rem;font-weight:500;}
+.nav-desktop > a:not(.btn){text-decoration:none;position:relative;padding-block:.3rem;}
+.nav-desktop > a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--turquoise);transform:scaleX(0);transition:transform .2s;border-radius:2px;}
+.nav-desktop > a:not(.btn):hover::after{transform:scaleX(1);}
+.nav-phone{display:inline-flex;align-items:center;gap:.45rem;font-weight:600;text-decoration:none;color:var(--navy);}
+.nav-phone svg{width:18px;height:18px;stroke:var(--turquoise);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:.5rem;border-radius:10px;}
+.menu-toggle svg{width:26px;height:26px;stroke:var(--navy);fill:none;stroke-width:2;stroke-linecap:round;}
+.menu-toggle .icon-close{display:none;}
+.menu-toggle[aria-expanded="true"] .icon-open{display:none;}
+.menu-toggle[aria-expanded="true"] .icon-close{display:block;}
+.nav-mobile{display:none;}
+
+/* ===== Hero ===== */
+.hero{background:linear-gradient(180deg,var(--sky) 0%,#F6FCFD 100%);overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(2rem,5vw,4rem);padding-block:clamp(3.5rem,7vw,5.5rem);}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--white);border:1.5px solid var(--turquoise);border-radius:var(--radius-pill);padding:.5rem 1.15rem;font-size:.83rem;font-weight:600;box-shadow:var(--shadow-soft);}
+.badge svg{width:16px;height:16px;stroke:var(--turquoise);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.hero h1{font-size:clamp(2rem,4.6vw,3.1rem);margin-block:1.2rem .9rem;}
+.hero h1 .accent{color:var(--turquoise);}
+.hero .sub{color:var(--navy-soft);font-size:clamp(.97rem,1.6vw,1.1rem);max-width:34rem;margin-bottom:1.9rem;}
+.hero-actions{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;}
+.hero-note{display:flex;align-items:center;gap:.5rem;margin-top:1.1rem;font-size:.86rem;color:var(--navy-soft);font-weight:500;}
+.hero-note svg{width:17px;height:17px;stroke:var(--turquoise);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex:none;}
+.hero-visual{justify-self:center;width:min(100%,360px);}
+.hero-visual svg{width:100%;height:auto;}
+
+/* ===== Steps ===== */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem;margin-top:2.6rem;}
+.step{position:relative;background:var(--white);border:1.5px solid var(--sky-border);border-radius:var(--radius-card);padding:2.4rem 1.6rem 1.9rem;text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s;}
+.step:hover{transform:translateY(-5px);box-shadow:var(--shadow-card);border-color:var(--turquoise);}
+.step-num{position:absolute;top:-1.1rem;left:50%;transform:translateX(-50%);background:var(--turquoise);color:var(--white);width:2.2rem;height:2.2rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;box-shadow:0 4px 12px rgba(69,199,214,.4);}
+.step-icon{width:60px;height:60px;border-radius:50%;background:var(--sky);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}
+.step-icon svg{width:27px;height:27px;stroke:var(--navy);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+.step h3{font-size:1.05rem;font-weight:600;margin-bottom:.4rem;}
+.step p{font-size:.9rem;color:var(--navy-soft);}
+
+/* ===== Audience band ===== */
+.band{background:var(--turquoise);color:var(--white);}
+.band h2{color:var(--white);margin-bottom:.7rem;}
+.band p{max-width:42rem;margin-inline:auto;font-size:.97rem;}
+.band-chips{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1.8rem;}
+.chip{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.55);border-radius:var(--radius-pill);padding:.65rem 1.5rem;font-weight:600;font-size:.93rem;}
+.chip svg{width:19px;height:19px;stroke:var(--white);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ===== Form ===== */
+.formsection{background:var(--sky);}
+.formcard{background:var(--white);border-radius:calc(var(--radius-card) + 4px);max-width:600px;margin-inline:auto;padding:clamp(1.8rem,5vw,2.8rem);box-shadow:var(--shadow-card);}
+.formcard h2{font-size:clamp(1.35rem,2.6vw,1.6rem);}
+.form-intro{font-size:.9rem;color:var(--navy-soft);margin:.4rem 0 1.7rem;}
+.field{margin-bottom:1.15rem;}
+.field-label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.4rem;}
+.field-label .optional{font-weight:400;color:var(--navy-soft);}
+.input{width:100%;padding:.8rem 1.05rem;border:1.5px solid #C9CEE4;border-radius:var(--radius-input);font-family:inherit;font-size:.95rem;color:var(--navy);background:var(--white);transition:border-color .15s,box-shadow .15s;}
+.input::placeholder{color:#9AA0C0;}
+.input:hover{border-color:#A9B0D2;}
+.input:focus{outline:none;border-color:var(--turquoise);box-shadow:0 0 0 4px rgba(69,199,214,.18);}
+.field.invalid .input{border-color:var(--danger);}
+.field.invalid .input:focus{box-shadow:0 0 0 4px rgba(201,52,74,.14);}
+.error-msg{display:none;font-size:.78rem;color:var(--danger);font-weight:500;margin-top:.35rem;}
+.field.invalid .error-msg{display:block;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.segmented{display:flex;gap:.7rem;}
+.segmented label{flex:1;position:relative;}
+.segmented input{position:absolute;opacity:0;inset:0;cursor:pointer;}
+.segmented span{display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.75rem;border-radius:var(--radius-pill);border:1.5px solid #C9CEE4;font-size:.92rem;font-weight:500;cursor:pointer;transition:all .15s;}
+.segmented svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.segmented input:checked + span{background:var(--turquoise);border-color:var(--turquoise);color:var(--white);font-weight:600;box-shadow:0 4px 12px rgba(69,199,214,.3);}
+.segmented input:focus-visible + span{outline:3px solid var(--turquoise);outline-offset:2px;}
+.checks{margin-top:1.4rem;}
+.check{display:flex;gap:.7rem;align-items:flex-start;font-size:.84rem;color:var(--navy-soft);padding:.45rem 0;cursor:pointer;border-radius:8px;}
+.check input{margin-top:.22rem;accent-color:var(--turquoise);width:1.05rem;height:1.05rem;flex:none;cursor:pointer;}
+.check a{color:var(--navy);font-weight:600;text-underline-offset:3px;}
+.check.invalid span{color:var(--danger);}
+.submit{width:100%;margin-top:1.3rem;}
+.form-privacy{margin-top:1rem;font-size:.76rem;color:var(--navy-soft);text-align:center;}
+.thanks{display:none;text-align:center;padding:2rem .5rem;}
+.thanks.visible{display:block;}
+.thanks-icon{width:72px;height:72px;border-radius:50%;background:var(--sky);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;}
+.thanks-icon svg{width:34px;height:34px;stroke:var(--turquoise);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
+.thanks h3{font-size:1.25rem;margin-bottom:.5rem;}
+.thanks p{font-size:.92rem;color:var(--navy-soft);max-width:26rem;margin-inline:auto;}
+
+/* ===== Reglement ===== */
+.reglement-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4rem);align-items:start;}
+.reglement-list{list-style:none;display:grid;gap:.2rem;}
+.reglement-list li{display:flex;gap:.85rem;font-size:.93rem;color:var(--navy-soft);padding:.7rem 0;border-bottom:1px solid var(--sky-border);}
+.reglement-list li:last-child{border-bottom:0;}
+.reglement-list svg{width:21px;height:21px;flex:none;stroke:var(--turquoise);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;margin-top:.15rem;}
+.reglement-cta{margin-top:1.6rem;}
+
+/* ===== CTA band ===== */
+.cta-band{background:var(--navy);color:var(--white);text-align:center;}
+.cta-band h2{color:var(--white);}
+.cta-band p{color:#B9C0E4;max-width:34rem;margin:.6rem auto 1.8rem;font-size:.95rem;}
+
+/* ===== Footer ===== */
+.site-footer{padding:2.2rem 0;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--sky-border);padding-top:2rem;}
+.footer-links{display:flex;gap:.4rem;flex-wrap:wrap;font-size:.8rem;color:var(--navy-soft);align-items:center;}
+.footer-links a{text-decoration:none;}
+.footer-links a:hover{text-decoration:underline;text-underline-offset:3px;}
+.footer-links .sep{color:var(--sky-border);}
+
+/* ===== Reveal animation ===== */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* ===== Responsive ===== */
+@media (max-width:880px){
+  .hero-grid{grid-template-columns:1fr;text-align:center;padding-block:3rem 3.4rem;}
+  .hero .sub{margin-inline:auto;}
+  .hero-actions{justify-content:center;}
+  .hero-note{justify-content:center;}
+  .hero-visual{order:-1;width:min(62vw,260px);margin-inline:auto;}
+  .reglement-grid{grid-template-columns:1fr;}
+}
+@media (max-width:760px){
+  .nav-desktop{display:none;}
+  .menu-toggle{display:block;}
+  .nav-mobile{display:none;position:absolute;left:0;right:0;top:100%;background:var(--white);box-shadow:0 18px 30px rgba(33,41,92,.12);padding:1rem clamp(1.25rem,4vw,2.5rem) 1.6rem;flex-direction:column;gap:.2rem;border-top:1px solid var(--sky-border);}
+  .nav-mobile.open{display:flex;}
+  .nav-mobile a{text-decoration:none;font-weight:500;padding:.8rem .2rem;font-size:1rem;border-bottom:1px solid var(--sky);}
+  .nav-mobile .btn{margin-top:1rem;justify-content:center;border-bottom:0;}
+  .grid2{grid-template-columns:1fr;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{transition-duration:.01ms !important;animation-duration:.01ms !important;}
+  .reveal{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Ga naar de inhoud</a>
+
+<div class="topbar">Hulp in huis bestaat 20 jaar &mdash; <a href="#inschrijven">doe mee aan onze verjaardags&shy;wedstrijd!</a></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="logo" href="#" aria-label="Hulp in huis – home"><img src="https://hulpinhuis.be/hubfs/logo.svg" alt="hulp in huis" width="170" height="48" class="logo-img"></a>
+
+    <nav class="nav-desktop" aria-label="Hoofdnavigatie">
+      <a href="#hoe">zo neem je deel</a>
+      <a href="#reglement">reglement</a>
+      <a class="nav-phone" href="tel:080011477">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        bel gratis 0800&nbsp;114&nbsp;77
+      </a>
+      <a class="btn btn-primary" href="#inschrijven">ik wil deelnemen</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMobile" aria-label="Menu openen">
+      <svg class="icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobiele navigatie">
+    <a href="#hoe">zo neem je deel</a>
+    <a href="#reglement">reglement</a>
+    <a href="tel:080011477">bel gratis 0800 114 77</a>
+    <a class="btn btn-primary" href="#inschrijven">ik wil deelnemen</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22 14 2l2 1-1.5 3.5L20 9l-2 4-4-1.5L8 22z"/><path d="M9 12l3 1.5"/></svg>
+          2006 &ndash; 2026 &middot; al 20 jaar Hulp in huis
+        </span>
+        <h1 id="hero-title">20 jaar Hulp in huis. Dat vieren we <span class="accent">samen met jou</span>.</h1>
+        <p class="sub">Al 20 jaar zorgen onze klanten, huishoudhulpen en medewerkers mee voor het verhaal van Hulp in huis. Daarom vieren we deze verjaardag met een maandelijkse wedstrijd voor klanten en werknemers, van juli tot en met december 2026.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#inschrijven">ik wil deelnemen
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-outline" href="#hoe">hoe werkt het?</a>
+        </div>
+        <p class="hero-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+          E&eacute;n inschrijving volstaat voor alle maandelijkse trekkingen
+        </p>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 360 360" role="img" aria-label="Feestelijk embleem 20 jaar">
+          <circle cx="180" cy="180" r="148" fill="#FFFFFF"/>
+          <circle cx="180" cy="180" r="148" fill="none" stroke="#45C7D6" stroke-width="3"/>
+          <circle cx="180" cy="180" r="126" fill="none" stroke="#CDEDF3" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
+          <text x="180" y="196" text-anchor="middle" font-family="Poppins,sans-serif" font-size="104" font-weight="700" fill="#21295C">20</text>
+          <text x="180" y="238" text-anchor="middle" font-family="Poppins,sans-serif" font-size="25" font-weight="600" fill="#45C7D6" letter-spacing="7">JAAR</text>
+          <path d="M118 122h124" stroke="#45C7D6" stroke-width="3" stroke-linecap="round"/>
+          <path d="M150 268h60" stroke="#CDEDF3" stroke-width="3" stroke-linecap="round"/>
+          <g stroke-linecap="round">
+            <rect x="46" y="60" width="12" height="12" rx="3" fill="#45C7D6" transform="rotate(18 52 66)"/>
+            <rect x="300" y="84" width="10" height="10" rx="3" fill="#21295C" transform="rotate(-22 305 89)"/>
+            <rect x="318" y="226" width="12" height="12" rx="3" fill="#45C7D6" transform="rotate(30 324 232)"/>
+            <rect x="36" y="248" width="10" height="10" rx="3" fill="#21295C" transform="rotate(-14 41 253)"/>
+            <circle cx="92" cy="22" r="6" fill="#21295C"/>
+            <circle cx="262" cy="30" r="7" fill="#45C7D6"/>
+            <circle cx="344" cy="150" r="5" fill="#CDEDF3"/>
+            <circle cx="16" cy="150" r="6" fill="#45C7D6"/>
+            <circle cx="120" cy="338" r="6" fill="#45C7D6"/>
+            <circle cx="282" cy="326" r="5" fill="#21295C"/>
+            <path d="M210 14q8 10 0 20" stroke="#45C7D6" stroke-width="3" fill="none"/>
+            <path d="M58 312q10 6 20 0" stroke="#21295C" stroke-width="3" fill="none"/>
+            <path d="M330 290q-8 8-2 18" stroke="#45C7D6" stroke-width="3" fill="none"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section" id="hoe" aria-labelledby="hoe-title">
+    <div class="container center">
+      <h2 id="hoe-title" class="reveal">Zo neem je deel</h2>
+      <p class="section-intro reveal">Inschrijven is eenvoudig. Vul &eacute;&eacute;n keer je gegevens in en je neemt automatisch deel aan de maandelijkse trekkingen tijdens de looptijd van de wedstrijd.</p>
+      <div class="steps">
+        <article class="step reveal">
+          <span class="step-num" aria-hidden="true">1</span>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </div>
+          <h3>Schrijf je &eacute;&eacute;nmalig in</h3>
+          <p>Vul je gegevens in via het formulier hieronder. Dat duurt geen minuut.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-num" aria-hidden="true">2</span>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9 15.5l2 2 4-4"/></svg>
+          </div>
+          <h3>Neem automatisch deel</h3>
+          <p>Je inschrijving blijft geldig voor elke maandelijkse trekking tijdens de actieperiode.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-num" aria-hidden="true">3</span>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>
+          </div>
+          <h3>Maak kans op een prijs</h3>
+          <p>Elke maand worden er winnaars gekozen bij klanten &eacute;n bij werknemers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audience -->
+  <section class="band section center" aria-labelledby="voorwie-title">
+    <div class="container">
+      <h2 id="voorwie-title" class="reveal">Voor klanten en werknemers van Hulp in huis</h2>
+      <p class="reveal">Deze wedstrijd is bedoeld voor mensen die deel uitmaken van Hulp in huis: onze klanten en onze werknemers. Daarom vragen we bij je inschrijving je klantnummer of personeelsnummer. Deelname wordt gecontroleerd.</p>
+      <div class="band-chips reveal">
+        <span class="chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+          ik ben klant
+        </span>
+        <span class="chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+          ik ben werknemer
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="formsection section" id="inschrijven" aria-labelledby="form-title">
+    <div class="container">
+      <div class="formcard">
+        <form id="wedstrijdform" novalidate>
+          <h2 id="form-title">Schrijf je in voor de wedstrijd</h2>
+          <p class="form-intro">Vul hieronder je gegevens in. E&eacute;n inschrijving volstaat voor de volledige wedstrijdperiode.</p>
+
+          <div class="field">
+            <span class="field-label" id="type-label">Ik ben</span>
+            <div class="segmented" role="radiogroup" aria-labelledby="type-label">
+              <label>
+                <input type="radio" name="type" value="klant" checked>
+                <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>klant</span>
+              </label>
+              <label>
+                <input type="radio" name="type" value="werknemer">
+                <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>werknemer</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div class="field" data-validate="required">
+              <label class="field-label" for="voornaam">Voornaam</label>
+              <input class="input" type="text" id="voornaam" name="voornaam" autocomplete="given-name" placeholder="bv. Els" aria-describedby="voornaam-err">
+              <p class="error-msg" id="voornaam-err">Vul je voornaam in.</p>
+            </div>
+            <div class="field" data-validate="required">
+              <label class="field-label" for="naam">Naam</label>
+              <input class="input" type="text" id="naam" name="naam" autocomplete="family-name" placeholder="bv. Peeters" aria-describedby="naam-err">
+              <p class="error-msg" id="naam-err">Vul je naam in.</p>
+            </div>
+          </div>
+
+          <div class="field" data-validate="email">
+            <label class="field-label" for="email">E-mailadres</label>
+            <input class="input" type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="naam@voorbeeld.be" aria-describedby="email-err">
+            <p class="error-msg" id="email-err">Vul een geldig e-mailadres in.</p>
+          </div>
+
+          <div class="field" data-validate="required">
+            <label class="field-label" for="tel">Telefoonnummer</label>
+            <input class="input" type="tel" id="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="bv. 0470 12 34 56" aria-describedby="tel-err">
+            <p class="error-msg" id="tel-err">Vul je telefoonnummer in.</p>
+          </div>
+
+          <div class="field" data-validate="required">
+            <label class="field-label" for="nummer">Klantnummer of personeelsnummer</label>
+            <input class="input" type="text" id="nummer" name="nummer" placeholder="je vindt dit op je documenten van Hulp in huis" aria-describedby="nummer-err">
+            <p class="error-msg" id="nummer-err">Vul je klantnummer of personeelsnummer in.</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="kantoor">Kantoor of regio <span class="optional">(optioneel)</span></label>
+            <input class="input" type="text" id="kantoor" name="kantoor" placeholder="bv. Kortrijk">
+          </div>
+
+          <div class="checks">
+            <label class="check" data-check>
+              <input type="checkbox" id="akkoord-reglement">
+              <span>Ik ga akkoord met het <a href="#reglement">wedstrijdreglement</a>.</span>
+            </label>
+            <label class="check" data-check>
+              <input type="checkbox" id="akkoord-privacy">
+              <span>Ik geef toestemming dat mijn gegevens verwerkt worden voor deze wedstrijd.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg submit">schrijf mij in
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form-privacy">Je gegevens worden enkel gebruikt voor deze wedstrijd.</p>
+        </form>
+
+        <div class="thanks" id="thanks" role="status">
+          <div class="thanks-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3>Bedankt voor je inschrijving!</h3>
+          <p>Je neemt automatisch deel aan de maandelijkse trekkingen tijdens de looptijd van de wedstrijd. Veel succes!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reglement -->
+  <section class="section" id="reglement" aria-labelledby="reglement-title">
+    <div class="container reglement-grid">
+      <div class="reveal">
+        <h2 id="reglement-title">Wedstrijd&shy;reglement</h2>
+        <p class="section-intro" style="margin-top:.7rem;">Lees het volledige wedstrijdreglement voor alle voorwaarden, de looptijd van de actie, de trekkingen en de verwerking van persoonsgegevens.</p>
+        <p class="reglement-cta">
+          <a class="btn btn-outline" href="#">bekijk het volledige reglement
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </p>
+      </div>
+      <ul class="reglement-list reveal">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>De wedstrijd loopt van 1 juli tot en met 31 december 2026.</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Inschrijven kan tot en met de 25e van elke maand om mee te doen aan de trekking van die maand.</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>De trekking gebeurt op de eerste werkdag van de volgende maand.</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>De wedstrijd is enkel voor klanten en werknemers van Hulp in huis; deelname wordt gecontroleerd.</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>E&eacute;n inschrijving volstaat voor alle maandelijkse trekkingen.</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Persoonsgegevens worden enkel gebruikt voor deze wedstrijd.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band section" aria-labelledby="cta-title">
+    <div class="container">
+      <h2 id="cta-title" class="reveal">Klaar om mee te vieren?</h2>
+      <p class="reveal">20 jaar Hulp in huis vieren we het liefst met de mensen die er elke dag deel van uitmaken.</p>
+      <a class="btn btn-primary btn-lg reveal" href="#inschrijven">schrijf je in voor de wedstrijd</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="logo" href="#" aria-label="Hulp in huis – home"><img src="https://hulpinhuis.be/hubfs/logo.svg" alt="hulp in huis" width="135" height="38" class="logo-img logo-img-sm"></a>
+    <div class="footer-links">
+      <a href="https://www.iktoonrespect.be/">iktoonrespect.be</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="#">Cookie &amp; Privacy</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="#">Klantencontract</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Sticky header shadow */
+  var header = document.getElementById('siteHeader');
+  var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 4); };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* Mobile menu */
+  var toggle = document.getElementById('menuToggle');
+  var navMobile = document.getElementById('navMobile');
+  toggle.addEventListener('click', function(){
+    var open = navMobile.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+  });
+  navMobile.addEventListener('click', function(e){
+    if (e.target.closest('a')) {
+      navMobile.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && navMobile.classList.contains('open')) {
+      navMobile.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.focus();
+    }
+  });
+
+  /* Scroll reveal */
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, {threshold:.18, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* Form validation */
+  var form = document.getElementById('wedstrijdform');
+  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function validateField(field){
+    var input = field.querySelector('.input');
+    var mode = field.getAttribute('data-validate');
+    var ok = true;
+    if (mode === 'required') ok = input.value.trim().length > 0;
+    if (mode === 'email') ok = emailRe.test(input.value.trim());
+    field.classList.toggle('invalid', !ok);
+    input.setAttribute('aria-invalid', String(!ok));
+    return ok;
+  }
+
+  form.querySelectorAll('[data-validate] .input').forEach(function(input){
+    input.addEventListener('blur', function(){ validateField(input.closest('.field')); });
+    input.addEventListener('input', function(){
+      var f = input.closest('.field');
+      if (f.classList.contains('invalid')) validateField(f);
+    });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var firstInvalid = null;
+
+    form.querySelectorAll('[data-validate]').forEach(function(field){
+      if (!validateField(field) && !firstInvalid) firstInvalid = field.querySelector('.input');
+    });
+
+    form.querySelectorAll('[data-check]').forEach(function(check){
+      var box = check.querySelector('input');
+      var bad = !box.checked;
+      check.classList.toggle('invalid', bad);
+      if (bad && !firstInvalid) firstInvalid = box;
+    });
+
+    if (firstInvalid) {
+      firstInvalid.focus();
+      firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    form.style.display = 'none';
+    var thanks = document.getElementById('thanks');
+    thanks.classList.add('visible');
+    thanks.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  form.querySelectorAll('[data-check] input').forEach(function(box){
+    box.addEventListener('change', function(){
+      box.closest('[data-check]').classList.toggle('invalid', false);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
